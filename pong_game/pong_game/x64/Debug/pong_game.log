@@ -1,0 +1,3 @@
+﻿  pong_game.cpp
+D:\c_program\pong_game\pong_game\pong_game.cpp(97,6): warning C4101: 'seged': unreferenced local variable
+  pong_game.vcxproj -> D:\c_program\pong_game\x64\Debug\pong_game.exe
