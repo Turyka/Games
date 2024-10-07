@@ -1,0 +1,32 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+
+int main() {
+    std::ifstream inputFile("input.txt");
+    std::string keres_2013("2013");
+
+    if (!inputFile.is_open()) {
+        std::cerr << "Error opening file!" << std::endl;
+        return 1;
+    }
+
+    std::string plate, startDate, lastDate;
+
+    // Read the file line by line
+    while (std::getline(inputFile, plate, '-') && std::getline(inputFile, startDate, '-') && std::getline(inputFile, lastDate)) {
+        if (plate == "*") {
+            break;
+        }
+        std::cout <<  plate
+            <<  startDate
+            <<lastDate << std::endl;
+
+        
+
+        std::cout << plate.length() << std::endl; // Debug: Show the plate length
+    }
+
+    inputFile.close();
+    return 0;
+}
