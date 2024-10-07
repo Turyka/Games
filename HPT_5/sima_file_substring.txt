@@ -1,0 +1,28 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+
+int main() {
+    std::ifstream inputFile("input.txt");
+
+    if (!inputFile.is_open()) {
+        std::cerr << "Error opening file!" << std::endl;
+        return 1;
+    }
+
+    std::string plate, startDate, lastDate;
+
+    while (inputFile >> plate >> startDate >> lastDate) {
+        if (plate == "*") {
+            break;
+        }
+
+        std::cout << "Plate: " << plate
+            << ", Start Date: " << startDate.substr(5, 2)
+            << ", Last Date: " << lastDate << std::endl;
+    }
+
+    inputFile.close();
+
+    return 0;
+}
